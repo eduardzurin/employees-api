@@ -42,3 +42,9 @@ export async function createEmployee(employee: {name: string, title: string, tri
     employees.push(structuredClone(newEmployee))
     return newEmployee
 }
+
+export async function deleteEmployee(id: number){
+    structuredClone(employees.splice(id, 1));
+}
+
+export { Employee };
