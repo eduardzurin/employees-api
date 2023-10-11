@@ -4,9 +4,9 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fastify_1 = __importDefault(require("fastify"));
-//import routes from "./routes";
+const routes_1 = __importDefault(require("./routes"));
 const fastify = (0, fastify_1.default)();
-//fastify.register(routes);
+fastify.register(routes_1.default);
 fastify
     .listen({ host: "127.0.0.1", port: 3000 })
     .then(() => {

@@ -1,26 +1,25 @@
-import * as tribeModel from './tribes.model';
 
 interface Employee{
     name: string;
     title: string;
-    tribe: Promise<tribeModel.Tribe>;
+    tribe: number;
 }
 
 const employees = [
     {
         name: 'Eduard Zurin',
         title: 'Intern',
-        tribe: tribeModel.getTribe(0)
+        tribe: 0
     },
     {
         name: 'Mark Mets',
         title: 'Software Engineer',
-        tribe: tribeModel.getTribe(1)
+        tribe: 1
     },
     {
         name: 'Litman Huang',
         title: 'Team Lead',
-        tribe: tribeModel.getTribe(2)
+        tribe: 2
     },
 
 ]
@@ -37,9 +36,13 @@ export async function createEmployee(employee: {name: string, title: string, tri
     const newEmployee: Employee = {
         name : employee.name,
         title: employee.title,
-        tribe: tribeModel.getTribe(employee.tribe)
+        tribe: employee.tribe,
     }
-    employees.push(structuredClone(newEmployee))
+    try{
+        employees.push(structuredClone(newEmployee))
+    } catch(error){
+        console.log(error)
+    }
     return newEmployee
 }
 

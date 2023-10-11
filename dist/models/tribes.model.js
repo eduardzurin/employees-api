@@ -1,8 +1,6 @@
-interface Tribe{
-    name: string;
-    department: string;
-}
-
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getTribe = exports.getTribes = void 0;
 const tribes = [
     {
         name: "InternStellar",
@@ -16,14 +14,13 @@ const tribes = [
         name: "Gears",
         department: "Some department"
     }
-]
-
-export async function getTribes(){
+];
+async function getTribes() {
     return structuredClone(tribes);
 }
-
-export async function getTribe(id: number){
+exports.getTribes = getTribes;
+async function getTribe(id) {
     return structuredClone(tribes[id]);
 }
-
-export { Tribe };
+exports.getTribe = getTribe;
+//# sourceMappingURL=tribes.model.js.map
