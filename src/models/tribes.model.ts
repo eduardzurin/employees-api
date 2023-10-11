@@ -1,4 +1,4 @@
-interface Tribe{
+export interface Tribe{
     name: string;
     department: string;
 }
